@@ -2,11 +2,9 @@ en:
   static_pages:
     home:
       home: "Home"
-      blog: "| Sky's Blog"
     help:
       help: "Help"
-      blog: "| Sky's Blog"
     about:
       about: "About"
-      blog: "| Sky's Blog"
+
 
