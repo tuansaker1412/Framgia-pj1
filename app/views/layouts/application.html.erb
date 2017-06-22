@@ -12,6 +12,13 @@
   <body>
     <%= render "layouts/header" %>
     <div class="container">
+      <% flash.each do |color, message| %>
+        <div id="card-alert" class="card <%= color %>">
+          <div class="card-content white-text">
+            <%= message %>
+          </div>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
     <%= render "layouts/footer" %>

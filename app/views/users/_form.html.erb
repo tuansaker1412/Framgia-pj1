@@ -1,0 +1,45 @@
+<%= form_for @user, html: {class: "col s12"} do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert-danger">
+        The form contains <%= pluralize(@user.errors.count, "error") %>.
+      </div>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.text_field :name, class: "validate", id: "name" %>
+      <%= f.label "Username", for: "name" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.email_field :email, class: "validate", id: "email" %>
+      <%= f.label "Email", for: "email" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.password_field :password, class: "validate", id: "password" %>
+      <%= f.label "Password", for: "password" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.password_field :password_confirmation, class: "validate",
+        id: "password_confirmation" %>
+      <%= f.label "Password Confirmation", for: "password_confirmation" %>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn waves-effect waves-light">
+      <%= f.submit "Create my account" %>
+      <i class="material-icons right">send</i>
+    </button>
+  </div>
+<% end %>

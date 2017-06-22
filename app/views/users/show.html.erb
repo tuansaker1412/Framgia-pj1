@@ -1,0 +1,6 @@
+<% provide(:title, @user.name) %>
+<div class="container">
+  <h3><%= gravatar_for @user %></h3>
+  <h4><%= @user.name %></h4>
+  <h4><%= @user.email %></h4>
+</div>
