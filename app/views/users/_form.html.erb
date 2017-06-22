@@ -1,4 +1,5 @@
 <%= form_for @user, html: {class: "col s12"} do |f| %>
+  <%= render "shared/error" %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <div class="alert-danger">
@@ -13,33 +14,39 @@
   <% end %>
   <div class="row">
     <div class="input-field col s6">
+      <i class="material-icons prefix">perm_identity</i>
       <%= f.text_field :name, class: "validate", id: "name" %>
       <%= f.label "Username", for: "name" %>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s6">
+      <i class="material-icons prefix">email</i>
       <%= f.email_field :email, class: "validate", id: "email" %>
       <%= f.label "Email", for: "email" %>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s6">
+      <i class="material-icons prefix">vpn_key</i>
       <%= f.password_field :password, class: "validate", id: "password" %>
       <%= f.label "Password", for: "password" %>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s6">
+      <i class="material-icons prefix">forward</i>
       <%= f.password_field :password_confirmation, class: "validate",
         id: "password_confirmation" %>
       <%= f.label "Password Confirmation", for: "password_confirmation" %>
     </div>
   </div>
   <div class="row">
-    <button class="btn waves-effect waves-light">
-      <%= f.submit "Create my account" %>
-      <i class="material-icons right">send</i>
-    </button>
+    <div class="col s6">
+      <button class="btn waves-effect waves-light">
+        <%= f.submit "Create my account" %>
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
   </div>
 <% end %>

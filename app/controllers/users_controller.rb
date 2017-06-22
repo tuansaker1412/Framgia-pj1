@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     @user = User.new user_params
 
     if @user.save
-      flash[:green] = "Created User!"
+      log_in @user
+      flash[:green] = "Welcome to Sky's Blog"
       redirect_to @user
     else
       flash.now[:red] = "Error"
