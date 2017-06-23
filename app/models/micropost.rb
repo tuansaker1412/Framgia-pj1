@@ -4,6 +4,6 @@ class Micropost < ApplicationRecord
   scope :sort_feed , ->{order created_at: :desc}
 
   validates :user_id, presence: true
-  validates :title, presence: true, length: {maximum: 50}
+  validates :title, presence: true, length: {maximum: 100}
   validates :content, presence: true, length: {maximum: 140}
 end

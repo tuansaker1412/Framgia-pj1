@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: [:show, :edit, :update, :correct_user, :destroy]
+  before_action :load_user, only: [:show, :edit, :update, :correct_user,
+    :destroy, :following, :followers]
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
   before_action :verify_admin, only: :destroy
@@ -57,6 +58,18 @@ class UsersController < ApplicationController
 
   def correct_user
     redirect_to root_url unless current_user? @user
+  end
+
+  def following
+    @title = "Following"
+    @users = @user.following.paginate(page: params[:page])
+    render :show_follow
+  end
+
+  def followers
+    @title = "Followers"
+    @users = @user.followers.paginate(page: params[:page])
+    render :show_follow
   end
 
   private
