@@ -6,7 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 gem "bcrypt", "3.1.11"
+gem "bootstrap-will_paginate"
 gem "coffee-rails", "~> 4.2"
+gem "faker"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "jquery-turbolinks"
@@ -17,6 +19,7 @@ gem "sass-rails", "~> 5.0"
 gem "sqlite3"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
+gem "will_paginate"
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console

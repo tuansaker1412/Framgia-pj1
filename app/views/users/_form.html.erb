@@ -1,17 +1,5 @@
 <%= form_for @user, html: {class: "col s12"} do |f| %>
   <%= render "shared/error" %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <div class="alert-danger">
-        The form contains <%= pluralize(@user.errors.count, "error") %>.
-      </div>
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
   <div class="row">
     <div class="input-field col s6">
       <i class="material-icons prefix">perm_identity</i>
@@ -44,7 +32,7 @@
   <div class="row">
     <div class="col s6">
       <button class="btn waves-effect waves-light">
-        <%= f.submit "Create my account" %>
+        <%= f.submit yield(:button_text) %>
         <i class="material-icons right">send</i>
       </button>
     </div>
