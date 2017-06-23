@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
+     @microposts = @user.microposts.sort_feed.paginate(page: params[:page]).per_page 10
   end
 
   def new

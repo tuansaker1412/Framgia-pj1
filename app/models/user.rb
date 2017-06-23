@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :microposts, dependent: :destroy
+
   before_save :downcase_email
 
   attr_accessor :remember_token
@@ -36,6 +38,10 @@ class User < ApplicationRecord
 
   def forget
     update_attribute :remember_digest, nil
+  end
+
+  def feed
+    Micropost.where("user_id = ?", id)
   end
 
   private

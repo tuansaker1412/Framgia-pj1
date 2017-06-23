@@ -1,9 +1,26 @@
 <% provide :title, t(".home") %>
-<div class="card medium center">
-  <div class="card-image">
-    <h3>Welcome to Sky's Blog</h3>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col s4">
+      <section class="user_info">
+        <%= render "shared/user_info" %>
+      </section>
+      <section class="micropost_form">
+        <%= render "shared/micropost_form" %>
+      </section>
+    </aside>
+    <div class="col s8">
+      <h4>New Feed</h4>
+      <%= render "shared/feed" %>
+    </div>
   </div>
-  <div class="card-action">
-    <%= link_to "Sign up", signup_path, class: "waves-effect waves-teal btn btn-large light-blue" %>
+<% else %>
+  <div class="card medium center">
+    <div class="card-image">
+      <h3>Welcome to Sky's Blog</h3>
+    </div>
+    <div class="card-action">
+      <%= link_to "Sign up", signup_path, class: "waves-effect waves-teal btn btn-large light-blue" %>
+    </div>
   </div>
-</div>
+<% end %>
