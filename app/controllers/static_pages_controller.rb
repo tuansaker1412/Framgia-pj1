@@ -6,6 +6,10 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def index
+    @microposts = Micropost.sort_feed.paginate(page: params[:page]).per_page 10
+  end
+
   def help
   end
 

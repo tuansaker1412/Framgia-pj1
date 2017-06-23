@@ -10,4 +10,23 @@
        data: {confirm: "You sure?"} %>
     <% end %>
   </span>
+  <span>
+    <% micropost.comments.each do |comment| %>
+      <p>
+        <b><%= comment.user.name %></b> :
+        <%= comment.content %>
+        <p>About <%= time_ago_in_words comment.created_at %> ago.</p>
+          <% if logged_in? && current_user?(comment.user) %>
+            <%= link_to "Delete", [comment.micropost, comment], method: :delete,
+              data: {confirm: "You sure?"} %>
+          <% end %>
+      </p>
+    <% end %>
+  </span>
+  <% if logged_in? && (current_user.following?(micropost.user) || current_user?(micropost.user)) %>
+    <span>
+      <%= render "comments/form", micropost: micropost,
+        comments: micropost.comments.build %>
+    </span>
+  <% end %>
 </li>
