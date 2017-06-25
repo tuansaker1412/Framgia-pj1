@@ -8,7 +8,7 @@
   </div>
   <div class="col s8">
     <% if @user.microposts.any? %>
-      <h4>Microposts (<%= @user.microposts.size %>)</h4>
+      <h4><%= t ".microposts" %> (<%= @user.microposts.size %>)</h4>
       <ol class="microposts">
         <%= render @microposts %>
       </ol>

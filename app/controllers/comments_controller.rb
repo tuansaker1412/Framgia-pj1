@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   before_action :find_comment, only: [:destroy]
 
   def create
-    @comment = @micropost.comments.create(params[:comment].permit(:content))
+    @comment = @micropost.comments.build(params[:comment].permit(:content))
     @comment.user_id = current_user.id
 
     if @comment.save

@@ -1,24 +1,25 @@
 <nav>
   <div class="nav-wrapper light-blue">
-    <%= link_to "HOME", root_path, class: "brand-logo center" %>
+    <%= link_to t(".home"), root_path, class: "brand-logo center" %>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <li><%= link_to "Help", help_path %></li>
-      <li><%= link_to "About", about_path %></li>
+      <li><%= link_to t(".help"), help_path %></li>
+      <li><%= link_to t(".about"), about_path %></li>
       <% if logged_in? %>
-        <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to t(".users"), users_path %></li>
         <ul id="dropdown1" class="dropdown-content">
-          <li><%= link_to "Profile", current_user %></li>
-          <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+          <li><%= link_to t(".profile"), current_user %></li>
+          <li><%= link_to t(".settings"), edit_user_path(current_user) %></li>
           <li class="divider"></li>
-          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+          <li><%= link_to t(".log_out"), logout_path, method: :delete %></li>
         </ul>
         <li>
           <a class="dropdown-button" href="#" data-activates="dropdown1">
-          Account<i class="material-icons right">arrow_drop_down</i></a>
+          <%= t ".account" %>
+          <i class="material-icons right">arrow_drop_down</i></a>
         </li>
       <% else %>
-        <li><%= link_to "Log in", login_path %></li>
+        <li><%= link_to t(".log_in"), login_path %></li>
     <% end %>
   </div>
 </nav>
