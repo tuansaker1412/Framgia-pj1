@@ -7,10 +7,11 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
 
     if @comment.save
-      redirect_to :back
+      flash[:green] = "Done!"
     else
-      render :new
+      flash[:red] = "Error!"
     end
+    redirect_to :back
   end
 
   def destroy
