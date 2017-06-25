@@ -1,10 +1,10 @@
-<% provide :title, "Edit user" %>
-<% provide :button_text, "Save changes" %>
-<h3>Update your profile</h3>
+<% provide :title, t(".edit") %>
+<% provide :button_text, t(".save") %>
+<h3><%= t ".update" %></h3>
 <%= render "form" %>
 <div class="row">
 <div class="gravatar_edit">
   <%= gravatar_for @user %>
-  <%= link_to "Change", href="http://gravatar.com/emails", target: "_blank" %>
+  <%= link_to t(".change"), "http://gravatar.com/emails", target: "_blank" %>
 </div>
 </div>

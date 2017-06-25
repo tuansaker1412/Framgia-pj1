@@ -1,10 +1,90 @@
 en:
+  layouts:
+    header:
+      home: "HOME"
+      help: "Help"
+      about: "About"
+      users: "Users"
+      profile: "Profile"
+      settings: "Settings"
+      log_out: "Log out"
+      log_in: "Log in"
+      account: "Account"
+    footer:
+      blog: "Sky's Blog"
+      welcome: "Welcome to Sky's Blog"
+      social: "Social"
+      fb: "Facebook"
+      ins: "Instagram"
+      copyright: "Copyright © 2017"
+      ngoctuan: "NgocTuan"
   static_pages:
     home:
       home: "Home"
+      newfeed: "New Feed"
+      welcome: "Welcome to Sky's Blog"
+      preview: "Preview"
+      sign_up: "Sign up"
     help:
       help: "Help"
     about:
       about: "About"
-
-
+    index:
+      all_posts: "All posts"
+  users:
+    index:
+      all_users: "All users"
+    new:
+      sign_up: "Sign up"
+      create: "Create my account"
+    show:
+      microposts: "Microposts"
+    edit:
+      edit: "Edit user"
+      save: "Save changes"
+      update: "Update your profile"
+      change: "Change"
+    user:
+      delete: "Delete"
+      you_sure: "You sure?"
+    form:
+      username: "Username"
+      email: "Email"
+      pass: "Password"
+      pass_confirm: "Password Confirmation"
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
+    show_follow:
+      view_my_profile: "View my profile"
+      microposts: "Microposts:"
+  microposts:
+    microposts:
+      delete: "Delete"
+      you_sure: "You sure?"
+      posted: "Posted"
+      ago: "ago."
+      about: "About"
+  comments:
+    form:
+      add_comment: "Add comment ..."
+      comment: "Comment"
+  sessions:
+    new:
+      log_in: "Log in"
+      email: "Email"
+      pass: "Password"
+      remember: "Remember me on this computer"
+  shared:
+    error:
+      the_form: "The form contains"
+    micropost_form:
+      title: "Title"
+      compose: "Compose new micropost..."
+      post: "Post"
+    stats:
+      following: "Following"
+      followers: "Followers"
+    user_info:
+      view_my_profile: "View my profile"

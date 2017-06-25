@@ -13,18 +13,18 @@
       </section>
     </aside>
     <div class="col s8">
-      <h4>New Feed</h4>
+      <h4><%= t ".newfeed" %></h4>
       <%= render "shared/feed" %>
     </div>
   </div>
 <% else %>
   <div class="card medium center">
     <div class="card-image">
-      <h3>Welcome to Sky's Blog</h3>
-      <%= link_to "Preview", index_path, class: "waves-effect waves-teal btn btn-large light-blue" %>
+      <h3><%= t ".welcome" %></h3>
+      <%= link_to t(".preview"), index_path, class: "waves-effect waves-teal btn btn-large light-blue" %>
     </div>
     <div class="card-action">
-      <%= link_to "Sign up", signup_path, class: "waves-effect waves-teal btn btn-large light-blue" %>
+      <%= link_to t(".sign_up"), signup_path, class: "waves-effect waves-teal btn btn-large light-blue" %>
     </div>
   </div>
 <% end %>
