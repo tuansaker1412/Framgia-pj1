@@ -1,8 +1,8 @@
-.alert-danger{
+.alert-danger {
   color: red;
 }
 
-.microposts{
+.microposts {
   list-style: none;
   padding: 0;
   li {
@@ -23,4 +23,8 @@
     margin-right: 10px;
     margin-top: 5px;
   }
+}
+
+p {
+  word-break: break-word;
 }
